@@ -1,0 +1,34 @@
+cabal-version:      3.0
+name:               advent-of-code-with-haskell
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Maeevick
+maintainer:         maeevick@gmail.com
+category:           Development
+build-type:         Simple
+
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+executable advent-of-code-with-haskell
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:    base ^>=4.17.2.1, advent-of-code-with-haskell-lib
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+library advent-of-code-with-haskell-lib
+    exposed-modules:    Hello, Day1
+    hs-source-dirs:     lib
+    build-depends:      base ^>=4.17.2.1
+    default-language:   Haskell2010
+
+test-suite tests
+    type: exitcode-stdio-1.0
+    main-is: Spec.hs
+    build-depends: base ^>=4.17, hspec >= 2.7, hspec-discover >= 2.7, advent-of-code-with-haskell-lib
+    hs-source-dirs: test
+    default-language: Haskell2010
