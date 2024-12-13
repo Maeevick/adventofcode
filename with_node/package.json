@@ -1,0 +1,16 @@
+{
+  "name": "advent-of-code-with-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-strip-types --no-warnings src/main.ts",
+    "test": "node --test --experimental-strip-types --no-warnings src/**/*.test.ts"
+  },
+  "author": "Maeevick",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  }
+}
