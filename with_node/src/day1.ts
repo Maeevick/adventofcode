@@ -21,8 +21,6 @@ function separateTheTwoLists(content: string[]): TwoColumnList {
 
 export function part1(content: string[]) {
   const { left, right } = separateTheTwoLists(content);
-  console.log("left", left);
-  console.log("right", right);
 
   let sum = 0;
   const length = Math.max(left.length, right.length);
@@ -33,6 +31,16 @@ export function part1(content: string[]) {
   return sum;
 }
 
-export function part2() {
-  return "This is day one, part two";
+export function part2(content: string[]) {
+  const { left, right } = separateTheTwoLists(content);
+
+  let sum = 0;
+  for (let i = 0; i < left.length; i++) {
+    const a = left[i];
+    const b = right.filter((e) => e === a).length;
+
+    sum += a * b;
+  }
+
+  return sum;
 }

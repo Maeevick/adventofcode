@@ -10,6 +10,6 @@ test("day1...", async (t) => {
   });
 
   await t.test("part2 says...", () => {
-    assert.strictEqual(day1part2(), "This is day one, part two");
+    assert.strictEqual(day1part2(readInput("day1part1sample")), 31);
   });
 });
