@@ -1,14 +1,16 @@
-module Day1Spec(spec) where
-
-import Test.Hspec
+module Day1Spec (spec) where
 
 import Day1 (part1, part2)
+import ReadInput (readInput)
+import Test.Hspec
 
 spec :: Spec
-spec = describe "day1 ..." $ do
-  context "part 1..." $ do
-    it "says ..." $ do
-      part1 `shouldBe` "This is day one, part one"
-  context "part2 ..." $ do
-    it "says ..." $ do
-      part2 `shouldBe` "This is day one, part two"
+spec = do
+  describe "part 1 with sample data" $ do
+    it "returns 11" $ do
+      content <- readInput "day1part1sample"
+      part1 content `shouldBe` 11
+  describe "part2 with sample data" $ do
+    it "returns 31" $ do
+      content <- readInput "day1part1sample"
+      part2 content `shouldBe` 31

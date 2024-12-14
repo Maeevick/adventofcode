@@ -1,8 +1,7 @@
-module HelloSpec(spec) where
-
-import Test.Hspec
+module HelloSpec (spec) where
 
 import Hello (hello)
+import Test.Hspec
 
 spec :: Spec
 spec = describe "setup is ok" $ do

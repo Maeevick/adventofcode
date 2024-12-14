@@ -1,10 +1,14 @@
 module Main where
 
-import Hello (hello)
 import Day1 (part1, part2)
+import Hello (hello)
+import ReadInput (readInput)
 
 main :: IO ()
 main = do
-    putStrLn ("\n" ++ hello ++ "\n\n")
-    putStrLn ("\n" ++ part1 ++ "\n\n")
-    putStrLn ("\n" ++ part2 ++ "\n\n")
+  putStrLn "----------------"
+  putStrLn hello
+  putStrLn "----------------"
+  putStrLn . ("D1P1: " <>) . show . Day1.part1 =<< readInput "day1part1"
+  putStrLn . ("D1P2: " <>) . show . Day1.part2 =<< readInput "day1part1"
+  putStrLn "----------------"
