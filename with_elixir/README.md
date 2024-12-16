@@ -13,6 +13,12 @@ mix run lib/main.ex
 mix test
 ```
 
+## Run the formatter
+
+```shell
+mix format
+```
+
 ## HOW TO (_it's more for me than real guidelines for anyone else_)
 
 - Add one file `dayX` in the `lib` folder
