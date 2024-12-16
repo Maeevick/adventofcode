@@ -12,6 +12,11 @@ cargo run
 cargo test
 ```
 
+## Run the formatter and the linter
+```shell
+cargo fmt && cargo clippy
+```
+
 ## HOW TO (_it's more for me than real guidelines for anyone else_)
 
 - Add one file `dayX.rs` in the `src` folder
