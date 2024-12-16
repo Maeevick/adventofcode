@@ -14,6 +14,11 @@ poetry shell
 poetry run pytest
 ```
 
+## Run black formatter
+```shell
+poetry run black SRC
+```
+
 ## HOW TO (_it's more for me than real guidelines for anyone else_)
 
 - Add one file `dayX` in the `src` folder
