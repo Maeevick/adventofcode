@@ -3,8 +3,11 @@ defmodule AdventOfCodeWithElixir do
     IO.puts("----------------")
     IO.puts(Hello.hello())
     IO.puts("----------------")
-    IO.puts("D1P1: #{Day1.part1(ReadInput.read_input("day1part1"))}")
-    IO.puts("D1P2: #{Day1.part2(ReadInput.read_input("day1part1"))}")
+    IO.puts("D1P1: #{Day1.part1(ReadInput.read_input("day1"))}")
+    IO.puts("D1P2: #{Day1.part2(ReadInput.read_input("day1"))}")
+    IO.puts("----------------")
+    IO.puts("D2P1: #{Day2.part1(ReadInput.read_input("day2"))}")
+    IO.puts("D2P2: #{Day2.part2(ReadInput.read_input("day2"))}")
     IO.puts("----------------")
   end
 end
