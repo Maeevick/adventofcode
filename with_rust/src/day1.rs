@@ -54,11 +54,11 @@ mod tests {
 
     #[test]
     fn part1solution() {
-        assert_eq!(part1(reader::read_input("day1part1sample")), 11);
+        assert_eq!(part1(reader::read_input("day1sample")), 11);
     }
 
     #[test]
     fn part2solution() {
-        assert_eq!(part2(reader::read_input("day1part1sample")), 31);
+        assert_eq!(part2(reader::read_input("day1sample")), 31);
     }
 }
