@@ -6,10 +6,10 @@ import { part1 as day1part1, part2 as day1part2 } from "./day1.ts";
 
 test("day1...", async (t) => {
   await t.test("part1 says...", () => {
-    assert.strictEqual(day1part1(readInput("day1part1sample")), 11);
+    assert.strictEqual(day1part1(readInput("day1sample")), 11);
   });
 
   await t.test("part2 says...", () => {
-    assert.strictEqual(day1part2(readInput("day1part1sample")), 31);
+    assert.strictEqual(day1part2(readInput("day1sample")), 31);
   });
 });
