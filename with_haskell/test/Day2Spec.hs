@@ -8,7 +8,7 @@ spec :: Spec
 spec = do
   describe "part 1 with sample data" $ do
     it "returns 2" $ do
-      content <- readInput "day1sample"
+      content <- readInput "day2sample"
       part1 content `shouldBe` 2
   describe "part2 with sample data" $ do
     it "returns 4" $ do
