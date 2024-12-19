@@ -1,23 +1,27 @@
 export function part1(content: string[]) {
-  const matches = content.join('').matchAll(/mul\((\d{1,3}),(\d{1,3})\)/g) 
-  let sum = 0
-  for (const [_,a,b] of matches) {
-    sum += Number(a) * Number(b)
-  }
-  return sum
+  const matches = content.join("").matchAll(/mul\((\d{1,3}),(\d{1,3})\)/g);
+
+  return [...matches].reduce(
+    (sum, [_, a, b]) => sum + Number(a) * Number(b),
+    0
+  );
 }
 
 export function part2(content: string[]) {
-  const matches = content.join('').matchAll(/(don't|do)\(\)|mul\((\d{1,3}),(\d{1,3})\)/g) 
-  let processing = true
-  let sum = 0
-  for (const [_,instruction,a,b] of matches) {
-    if(instruction) {
-      processing = instruction === 'do'
-    }
-    if(processing && a && b) {
-      sum += Number(a) * Number(b)
-    }
-  }
-  return sum
+  const matches = content
+    .join("")
+    .matchAll(/(don't|do)\(\)|mul\((\d{1,3}),(\d{1,3})\)/g);
+
+  return [...matches].reduce(
+    (acc, [_, instruction, a, b]) => {
+      if (instruction) {
+        return { sum: acc.sum, processing: instruction === "do" };
+      }
+      if(acc.processing && a && b) {
+        return { sum: acc.sum + Number(a) * Number(b), processing: true }
+      }
+      return acc
+    },
+    { processing: true, sum: 0 }
+  ).sum;
 }
