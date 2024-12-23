@@ -16,7 +16,7 @@ pub fn part2(content: Vec<String>) -> usize {
 
 fn is_sorted(report: &str) -> bool {
     let numbers: Vec<i32> = from_str_to_numbers(report);
-    
+
     numbers.is_sorted() || numbers.is_sorted_by(|a, b| b < a)
 }
 
@@ -30,10 +30,7 @@ fn has_valid_gaps(report: &str) -> bool {
 }
 
 fn from_str_to_numbers(report: &str) -> Vec<i32> {
-    report
-        .split_whitespace()
-        .flat_map(str::parse)
-        .collect()
+    report.split_whitespace().flat_map(str::parse).collect()
 }
 
 fn is_sorted_and_valid_gaps_with_one_exception(report: &str) -> bool {
@@ -44,8 +41,9 @@ fn is_sorted_and_valid_gaps_with_one_exception(report: &str) -> bool {
     for i in 0..numbers.len() {
         let mut new_numbers = numbers.clone();
         new_numbers.remove(i);
-        
-        if is_sorted(&new_numbers.iter().join(" ")) && has_valid_gaps(&new_numbers.iter().join(" ")) {
+
+        if is_sorted(&new_numbers.iter().join(" ")) && has_valid_gaps(&new_numbers.iter().join(" "))
+        {
             return true;
         }
     }

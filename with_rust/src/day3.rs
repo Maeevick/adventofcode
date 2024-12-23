@@ -6,15 +6,18 @@ pub fn part1(content: Vec<String>) -> i32 {
     re.captures_iter(&content.join(""))
         .map(|cap| {
             let a = cap[1].parse::<i32>().expect("Failed to parse first number");
-            let b = cap[2].parse::<i32>().expect("Failed to parse second number");
+            let b = cap[2]
+                .parse::<i32>()
+                .expect("Failed to parse second number");
             a * b
         })
         .sum()
 }
 
 pub fn part2(content: Vec<String>) -> i32 {
-    let re = Regex::new(r"(don't|do)\(\)|mul\((\d{1,3}),(\d{1,3})\)").expect("Invalid regex pattern");
-    
+    let re =
+        Regex::new(r"(don't|do)\(\)|mul\((\d{1,3}),(\d{1,3})\)").expect("Invalid regex pattern");
+
     re.captures_iter(&content.join(""))
         .fold((true, 0), |(processing, sum), cap| {
             if let Some(instruction) = cap.get(1) {
@@ -22,7 +25,9 @@ pub fn part2(content: Vec<String>) -> i32 {
             } else {
                 if processing {
                     let a = cap[2].parse::<i32>().expect("Failed to parse first number");
-                    let b = cap[3].parse::<i32>().expect("Failed to parse second number");
+                    let b = cap[3]
+                        .parse::<i32>()
+                        .expect("Failed to parse second number");
                     (processing, sum + a * b)
                 } else {
                     (processing, sum)

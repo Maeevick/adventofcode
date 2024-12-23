@@ -20,8 +20,8 @@ fn main() {
     println!("D2P2: {day2part2}");
     println!("----------------");
     let day3part1 = day3::part1(reader::read_input("day3").clone());
-    println!("D2P1: {day3part1}");
+    println!("D3P1: {day3part1}");
     let day3part2 = day3::part2(reader::read_input("day3").clone());
-    println!("D2P2: {day3part2}");
+    println!("D3P2: {day3part2}");
     println!("----------------");
 }
