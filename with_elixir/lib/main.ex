@@ -12,6 +12,9 @@ defmodule AdventOfCodeWithElixir do
     IO.puts("D3P1: #{Day3.part1(ReadInput.read_input("day3"))}")
     IO.puts("D3P2: #{Day3.part2(ReadInput.read_input("day3"))}")
     IO.puts("----------------")
+    IO.puts("D4P1: #{Day4.part1(ReadInput.read_input("day4"))}")
+    IO.puts("D4P2: #{Day4.part2(ReadInput.read_input("day4"))}")
+    IO.puts("----------------")
   end
 end
 
