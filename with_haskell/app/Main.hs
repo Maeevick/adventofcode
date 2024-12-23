@@ -3,6 +3,7 @@ module Main where
 import Day1 (part1, part2)
 import Day2 (part1, part2)
 import Day3 (part1, part2)
+import Day4 (part1, part2)
 import Hello (hello)
 import ReadInput (readInput)
 
@@ -19,4 +20,7 @@ main = do
   putStrLn "----------------"
   putStrLn . ("D3P1: " <>) . show . Day3.part1 =<< readInput "day3"
   putStrLn . ("D3P2: " <>) . show . Day3.part2 =<< readInput "day3"
+  putStrLn "----------------"
+  putStrLn . ("D4P1: " <>) . show . Day4.part1 =<< readInput "day4"
+  putStrLn . ("D4P2: " <>) . show . Day4.part2 =<< readInput "day4"
   putStrLn "----------------"
