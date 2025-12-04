@@ -31,7 +31,36 @@ pub fn part1(content: Vec<String>) -> u32 {
 }
 
 pub fn part2(content: Vec<String>) -> u64 {
-    42
+    content
+        .iter()
+        .map(|line| {
+            let chars: Vec<char> = line.chars().collect();
+
+            (1..=12)
+                .rev()
+                .scan(0, |start, remaining| {
+                    let end = chars.len() - remaining + 1;
+
+                    let (best, best_idx) = chars[*start..end].iter().enumerate().fold(
+                        (0, *start),
+                        |(best, best_idx), (i, &c)| {
+                            let digit = c.to_digit(10).unwrap();
+                            if digit > best {
+                                (digit, *start + i)
+                            } else {
+                                (best, best_idx)
+                            }
+                        },
+                    );
+                    *start = best_idx + 1;
+
+                    Some(char::from_digit(best, 10).unwrap())
+                })
+                .collect::<String>()
+                .parse::<u64>()
+                .unwrap()
+        })
+        .sum()
 }
 
 #[cfg(test)]
@@ -46,6 +75,6 @@ mod tests {
 
     #[test]
     fn part2solution() {
-        assert_eq!(part2(reader::read_input("day3sample")), 666);
+        assert_eq!(part2(reader::read_input("day3sample")), 3121910778619);
     }
 }
