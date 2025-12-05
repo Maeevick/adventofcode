@@ -1,3 +1,5 @@
+use rangemap::RangeInclusiveSet;
+
 pub fn part1(content: Vec<String>) -> usize {
     let parts: Vec<_> = content.split(|line| line.is_empty()).collect();
     parts[1]
@@ -15,7 +17,18 @@ pub fn part1(content: Vec<String>) -> usize {
 }
 
 pub fn part2(content: Vec<String>) -> usize {
-    42
+    content
+        .iter()
+        .take_while(|line| !line.is_empty())
+        .map(|range| range.split_once("-").unwrap())
+        .map(|(start, end)| (start.parse::<i64>().unwrap())..=(end.parse::<i64>().unwrap()))
+        .fold(RangeInclusiveSet::new(), |mut set, range| {
+            set.insert(range);
+            set
+        })
+        .iter()
+        .map(|range| range.end() - range.start() + 1)
+        .sum::<i64>() as usize
 }
 
 #[cfg(test)]
@@ -30,6 +43,6 @@ mod tests {
 
     #[test]
     fn part2solution() {
-        assert_eq!(part2(reader::read_input("day5sample")), 666);
+        assert_eq!(part2(reader::read_input("day5sample")), 14);
     }
 }
