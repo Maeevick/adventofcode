@@ -2,6 +2,7 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
 mod hello;
 mod reader;
 
@@ -47,5 +48,14 @@ fn main() {
     let start = Instant::now();
     let day4part2 = day4::part2(reader::read_input("day4").clone());
     println!("D4P2: {day4part2} ({}ms)", start.elapsed().as_millis());
+    println!("----------------");
+
+    let start = Instant::now();
+    let day5part1 = day5::part1(reader::read_input("day5").clone());
+    println!("D5P1: {day5part1} ({}ms)", start.elapsed().as_millis());
+
+    let start = Instant::now();
+    let day5part2 = day5::part2(reader::read_input("day5").clone());
+    println!("D5P2: {day5part2} ({}ms)", start.elapsed().as_millis());
     println!("----------------");
 }
